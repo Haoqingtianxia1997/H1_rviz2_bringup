@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>h1_bringup</name>
+  <version>0.0.0</version>
+  <description>H1 joint state bridge and RViz visualization</description>
+  <maintainer email="1834831158@qq.com">xuanhaosong</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>unitree_go</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz2</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

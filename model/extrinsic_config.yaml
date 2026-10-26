@@ -1,0 +1,48 @@
+# 外参运动链配置（torso_link 为公共参考系）
+# rpy 单位：弧度，支持 pi 表达式（由脚本解析）
+
+transforms:
+  #竖版相机支架
+  # imu_in_torso:
+  #   xyz: [-0.04452, -0.01891, 0.27756]
+  #   rpy: [0, 0, 0]
+
+  # camera_mount1_in_torso:
+  #   xyz: [0, 0, 0.477]
+  #   rpy: [0, 0, -1.5707963267948966]   # -pi/2
+
+  # camera_support2_in_mount1:
+  #   xyz: [0, 0, 0.0825]
+  #   # rpy: [-0.2618, 0, 0] # 下倾15度
+  #   rpy: [0, 0, 0] # 无倾斜
+
+  # camera_frame_in_support2:
+  #   xyz: [-0.01325, 0.055, 0.0205]
+  #   rpy: [1.5707963267948966, 0, 1.5707963267948966]   # pi/2, 0, pi/2
+
+  # optical_in_camera_frame:        # from: ros2 run tf2_ros tf2_echo camera_frame zed_left_camera_optical_frame
+  #   xyz: [0.000, 0.032, 0.013]
+  #   rpy: [-1.5707963267948966, 0, -1.5707963267948966] # -pi/2, 0, -pi/2
+
+
+  #横版相机支架
+  imu_in_torso:
+    xyz: [-0.04452, -0.01891, 0.27756]
+    rpy: [0, 0, 0]
+
+  camera_mount1_in_torso:
+    xyz: [0, 0, 0.477]
+    rpy: [0, 0, -1.5707963267948966]   # -pi/2
+
+  camera_support2_in_mount1:
+    xyz: [0, 0, 0.0825]
+    rpy: [-0.2618, 0, 0] # 下倾15度
+    # rpy: [0, 0, 0] # 无倾斜
+
+  camera_frame_in_support2:
+    xyz: [0.0315, -0.0405, 0.07]
+    rpy: [0, 0, 1.5707963267948966]   # pi/2, 0, pi/2
+
+  optical_in_camera_frame:        # from: ros2 run tf2_ros tf2_echo camera_frame zed_left_camera_optical_frame
+    xyz: [0.000, 0.032, 0.013]
+    rpy: [-1.5707963267948966, 0, -1.5707963267948966] # -pi/2, 0, -pi/2

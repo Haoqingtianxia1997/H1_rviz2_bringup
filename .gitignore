@@ -1,0 +1,22 @@
+# ROS / Python build artifacts
+build/
+install/
+log/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local tooling and credentials
+.agents/
+.codex/
+.aws/
+.venv/
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+*~
+.DS_Store

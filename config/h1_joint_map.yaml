@@ -1,0 +1,29 @@
+joints:
+  # Right leg
+  - {name: "right_hip_roll_joint",  index: 0}
+  - {name: "right_hip_pitch_joint", index: 1}
+  - {name: "right_knee_joint",      index: 2}
+  - {name: "right_hip_yaw_joint",   index: 8}
+  - {name: "right_ankle_joint",     index: 11}
+
+  # Left leg
+  - {name: "left_hip_roll_joint",   index: 3}
+  - {name: "left_hip_pitch_joint",  index: 4}
+  - {name: "left_knee_joint",       index: 5}
+  - {name: "left_hip_yaw_joint",    index: 7}
+  - {name: "left_ankle_joint",      index: 10}
+
+  # Torso
+  - {name: "torso_joint",           index: 6}
+
+  # Right arm
+  - {name: "right_shoulder_pitch_joint", index: 12}
+  - {name: "right_shoulder_roll_joint",  index: 13}
+  - {name: "right_shoulder_yaw_joint",   index: 14}
+  - {name: "right_elbow_joint",          index: 15}
+
+  # Left arm
+  - {name: "left_shoulder_pitch_joint",  index: 16}
+  - {name: "left_shoulder_roll_joint",   index: 17}
+  - {name: "left_shoulder_yaw_joint",    index: 18}
+  - {name: "left_elbow_joint",           index: 19}
