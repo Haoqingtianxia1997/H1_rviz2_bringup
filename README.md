@@ -1,4 +1,4 @@
-# h1_bringup
+# H1_rviz2_bringup
 
 ROS 2 H1 机器人状态可视化包。把 Unitree `/lowstate` 转为标准 `/joint_states`，通过 robot_state_publisher 和 RViz 展示机器人关节姿态。本包不发送运动控制指令，也不包含发布 `/lowstate` 的机器人通信驱动。
 
@@ -24,6 +24,19 @@ ROS 2 H1 机器人状态可视化包。把 Unitree `/lowstate` 转为标准 `/jo
 
 本机安装的是 ROS 2 Humble。运行需要 `rclpy`、`sensor_msgs`、`launch`、`launch_ros`、`robot_state_publisher`、`rviz2`、`tf2_ros`、PyYAML 和 `unitree_go`。通用运行依赖已写入 `package.xml`；ROS 2 本身和系统库不复制进项目。
 
+### 克隆本仓库
+
+先安装 ROS 2 Humble、colcon 和 rosdep，再创建工作空间并克隆本仓库：
+
+```bash
+mkdir -p ~/h1_rviz_ws/src
+cd ~/h1_rviz_ws/src
+git clone https://github.com/Haoqingtianxia1997/H1_rviz2_bringup.git h1_bringup
+cd ~/h1_rviz_ws
+```
+
+仓库名称是 `H1_rviz2_bringup`，ROS 包名仍是 `h1_bringup`。命令显式把仓库克隆到 `src/h1_bringup`，与下文路径保持一致。模型和 Unitree 消息源码副本都包含在本仓库内，不需要另行克隆模型仓库或 `humanoid_bridge`。
+
 ### 准备 Unitree 消息包
 
 **本项目已保存 `unitree_go` 的源码副本，不需要再从外部 `humanoid_bridge` 获取源码。但压缩包不会自动参与编译，运行时仍需要已编译并加载的 `unitree_go` 消息包。**
@@ -37,7 +50,7 @@ ROS 2 H1 机器人状态可视化包。把 Unitree `/lowstate` 转为标准 `/jo
 在新工作空间中，可把随附副本解压到 `src/`（以下假设本项目位于 `src/h1_bringup`）：
 
 ```bash
-cd <工作空间>
+cd ~/h1_rviz_ws
 tar -xzf src/h1_bringup/third_party/unitree_go.tar.gz -C src
 ```
 
@@ -47,7 +60,7 @@ tar -xzf src/h1_bringup/third_party/unitree_go.tar.gz -C src
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd <工作空间>
+cd ~/h1_rviz_ws
 rosdep install --from-paths src/h1_bringup --ignore-src -r -y
 rosdep install --from-paths src/unitree_go --ignore-src -r -y
 colcon build --packages-up-to h1_bringup --cmake-args -DBUILD_TESTING=OFF
@@ -73,7 +86,7 @@ python3 -c 'from unitree_go.msg import LowState; print("unitree_go 可用")'
 
 ```bash
 source /opt/ros/humble/setup.bash
-source <工作空间>/install/setup.bash
+source ~/h1_rviz_ws/install/setup.bash
 ros2 launch h1_bringup h1_real_rviz.launch.py
 ```
 
